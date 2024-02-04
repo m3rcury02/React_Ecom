@@ -5,7 +5,7 @@ This is my submission for the tanX.fi frontend engineer role.
 
 ## Tech Stack
 For this project, I tried my best to stick with a vanilla implementation.
-I used React.JS for the frontend framework
+I used React.JS for the frontend framework,
 For CSS I used TailwindCSS
 
 ## Features
