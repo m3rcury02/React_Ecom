@@ -20,9 +20,15 @@ const reducer = (state = initialState, action) => {
           ...state,
           favourites: [...state.favourites, action.payload],
         }
-      default :
-        return state;
-    }
+        case "REMOVE_FROM_FAVOURITES":
+          return {
+            ...state,
+            favourites: state.favourites.filter(product => product.id !== action.payload.id),
+          }
+        default :
+          return state;
+      }
+    
   }
   
   export default createStore(reducer)

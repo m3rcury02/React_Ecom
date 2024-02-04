@@ -21,7 +21,7 @@ The user of this react application will be able to view all the products.
 
  cd node_modules/ && ln -s /path/to/db.json db.json
 
- Since create-react-app can't access files outside src, this will create a copy of db.json in node_modules folder and point it to the db.json in the root folder
+ Since create-react-app can't access files outside src, this will create a copy of db.json in node_modules folder and point it to the db.json in the root folde r
 
 ## Improvements
 - There are some bugs related to persistence

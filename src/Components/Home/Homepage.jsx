@@ -49,11 +49,12 @@ const Homepage = () => {
             >
               ❤️
             </button>
-            <button className="px-3 py-2 text-white rounded-md">
+            <button className="px-3 py-2 text-white rounded-md"
+            onClick={(event) => handleAddToFavourites(event, product)}>
               <ion-icon
                 name="cart-outline"
                 size="large"
-                class="text-black hover:text-blue-500"
+                class="text-black hover:text-blue-500 transition"
               ></ion-icon>
             </button>
           </div>
