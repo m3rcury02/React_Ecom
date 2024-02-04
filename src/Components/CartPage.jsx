@@ -25,13 +25,13 @@ const CartPage = () => {
 
   return (
     <div className="flex justify-evenly mt-8">
-      <div className="bg-white p-4">
+      <div className="bg-white p-4 drop-shadow-lg">
         <h1 className="text-xl font-bold">My Cart (Favorites)</h1>
         {favourites.map((item) => (
           <div key={item.id} className="p-6">
             <div className="flex">
               <img src={item.image} className="h-28 w-28" alt={item.title} />
-            <div className="flex-col justify-evenly">
+            <div className="flex-col justify-evenly mx-6">
             <h2>{item.title}</h2>
             <p>₹{item.amount}</p>
             <button onClick={() => handleRemoveFromFavourites(item)} className="hover:text-red-600 transition">Remove from Favourites</button>
@@ -40,7 +40,7 @@ const CartPage = () => {
           </div>
         ))}
       </div>
-      <div className=" p-4 bg-white h-min">
+      <div className=" p-4 bg-white h-min drop-shadow-lg">
         <h1 className="text-xl text-gray-500 font-bold">Price Details</h1>
         <h2>Total Price</h2>
         <p>₹{totalPrice}</p>
