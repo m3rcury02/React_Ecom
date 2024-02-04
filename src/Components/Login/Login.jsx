@@ -52,7 +52,7 @@ const Login = () => {
             </div>
           </div>
           <div>
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-6">
               <Link
                 to="/register"
                 className="flex w-1/2 text-xs text-blue-500 my-auto"
@@ -68,7 +68,7 @@ const Login = () => {
             </div>
           </div>
         </form>
-        <Link to="/home" className="text-center w-full text-gray-400 mt-4">
+        <Link to="/home" className="text-center px-16 text-gray-400">
           Continue as guest
         </Link>
       </div>
