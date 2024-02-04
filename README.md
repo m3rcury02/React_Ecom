@@ -6,7 +6,8 @@ This is my submission for the tanX.fi frontend engineer role.
 ## Tech Stack
 For this project, I tried my best to stick with a vanilla implementation.
 I used React.JS for the frontend framework,
-For CSS I used TailwindCSS
+For CSS I used TailwindCSS,
+And Redux for state management
 
 ## Features
 
@@ -67,10 +68,3 @@ Please interact with the app and check db.json to verify
 | /products | Lists all available products |
 | /orders | Lists all available orders  
 | /favourites | Lists all available favourites
-
-## Bonus
-
-- Added some functionalities
-- Used redux for state management
-
----
