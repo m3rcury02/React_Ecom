@@ -21,7 +21,40 @@ const CartPage = () => {
       console.error('Error:', error);
     });
   };
-
+  const handleOrder = () => {
+    favourites.forEach(product => {
+      // Remove from favourites in db.json
+      fetch(`http://localhost:5000/favourites/${product.id}`, { // Replace with your JSON server URL
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        dispatch({ type: 'REMOVE_FROM_FAVOURITES', payload: product });
+  
+        // Add to orders in db.json
+        fetch('http://localhost:5000/orders', { // Replace with your JSON server URL
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(product),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          dispatch({ type: 'ADD_TO_ORDERS', payload: product });
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    });
+  };
+  
 
   return (
     <div className="flex justify-evenly mt-8">
@@ -39,11 +72,13 @@ const CartPage = () => {
             </div>
           </div>
         ))}
+         
       </div>
       <div className=" p-4 bg-white h-min drop-shadow-lg">
         <h1 className="text-xl text-gray-500 font-bold">Price Details</h1>
         <h2>Total Price</h2>
         <p>₹{totalPrice}</p>
+        <button onClick={handleOrder}>Order</button>
       </div>
     </div>
   );

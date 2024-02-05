@@ -21,7 +21,7 @@ const Header = () => {
                 </div>
 
                 <div class="hidden -mx-4 md:flex md:items-center">
-                    <a href="#" class="block mx-4 mt-2 md:mt-0 text-sm text-white capitalize ">Products
+                    <a href="/home" class="block mx-4 mt-2 md:mt-0 text-sm text-white capitalize ">Products
                     </a>
                     <a href="/" class="block mx-4 mt-2 md:mt-0 text-sm text-white capitalize ">Login/Logout</a>
                     <Link to="/cart" class="block mx-4 mt-2 md:mt-0 text-sm"><ion-icon name="cart-outline" size="large" class="text-black hover:text-white transition"></ion-icon></Link>

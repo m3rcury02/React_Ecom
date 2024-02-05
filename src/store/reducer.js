@@ -25,10 +25,16 @@ const reducer = (state = initialState, action) => {
             ...state,
             favourites: state.favourites.filter(product => product.id !== action.payload.id),
           }
+        case "ADD_TO_ORDERS":
+           return {
+             ...state,
+             orders: [...state.orders, ...action.payload],
+             favourites: [],
+           }
         default :
           return state;
       }
-    
+        
   }
   
   export default createStore(reducer)
