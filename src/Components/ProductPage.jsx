@@ -8,9 +8,9 @@ const ProductPage = () => {
   const products = useSelector((state) => state.products);
   const [favourite, setFavourite] = useState({});
   const handleAddToFavourites = (event, product) => {
-    event.preventDefault(); // Prevent the form submission
+    event.preventDefault(); 
     fetch("http://localhost:5000/favourites", {
-      // Replace with your JSON server URL
+      
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,8 +20,8 @@ const ProductPage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        setFavourite({ ...favourite, [product.id]: true }); // Set the favourite status for this product to true
-        navigate('/cart')
+        setFavourite({ ...favourite, [product.id]: true }); 
+        navigate("/cart");
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -46,13 +46,15 @@ const ProductPage = () => {
         <p className="text-3xl font-bold">₹{product.amount}</p>
         <div className="mt-56 flex justify-between ">
           <button
-          onClick={(event) => handleAddToFavourites(event, product)}
-          className="border-black border-2 p-6 hover:bg-black hover:text-white transition">
+            onClick={(event) => handleAddToFavourites(event, product)}
+            className="border-black border-2 p-6 hover:bg-black hover:text-white transition"
+          >
             Buy Now
           </button>
-          <button 
-          onClick={(event) => handleAddToFavourites(event, product)}
-          className="bg-black text-white p-6 hover:bg-white hover:text-black hover:border-2 hover:border-black transition">
+          <button
+            onClick={(event) => handleAddToFavourites(event, product)}
+            className="bg-black text-white p-6 hover:bg-white hover:text-black hover:border-2 hover:border-black transition"
+          >
             Add to Cart
           </button>
         </div>

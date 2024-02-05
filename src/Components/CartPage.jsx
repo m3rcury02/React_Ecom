@@ -8,15 +8,16 @@ const CartPage = () => {
   const orders = useSelector((state) => state.orders);
   const dispatch = useDispatch();
 
-  // Calculate the total price
+  
   const totalPrice = favourites.reduce(
     (total, item) => total + Number(item.amount),
     0
   );
 
-  const handleRemoveFromFavourites = (product) => {
+  const handleRemoveFromFavourites = (e, product) => {
+    e.preventDefault();
     fetch(`http://localhost:5000/favourites/${product.id}`, {
-      // Replace with your JSON server URL
+      
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -28,9 +29,10 @@ const CartPage = () => {
         console.error("Error:", error);
       });
   };
-  const handleRemoveFromOrders = (product) => {
+  const handleRemoveFromOrders = (e, product) => {
+    e.preventDefault();
     fetch(`http://localhost:5000/orders/${product.id}`, {
-      // Replace with your JSON server URL
+      
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -42,11 +44,12 @@ const CartPage = () => {
         console.error("Error:", error);
       });
   };
-  const handleOrder = () => {
+  const handleOrder = (e) => {
+    e.preventDefault();
     favourites.forEach((product) => {
-      // Remove from favourites in db.json
+      
       fetch(`http://localhost:5000/favourites/${product.id}`, {
-        // Replace with your JSON server URL
+        
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -54,9 +57,9 @@ const CartPage = () => {
           console.log("Success:", data);
           dispatch({ type: "REMOVE_FROM_FAVOURITES", payload: product });
 
-          // Add to orders in db.json
+          
           fetch("http://localhost:5000/orders", {
-            // Replace with your JSON server URL
+            
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -92,7 +95,7 @@ const CartPage = () => {
                   <h2>{item.title}</h2>
                   <p className="font-semibold">₹{item.amount}</p>
                   <button
-                    onClick={() => handleRemoveFromFavourites(item)}
+                    onClick={(event) => handleRemoveFromFavourites(event, item)}
                     className="mt-10 text-red-600"
                   >
                     Remove from Favourites
@@ -112,7 +115,7 @@ const CartPage = () => {
                   <h2>{item.title}</h2>
                   <p className="font-semibold">₹{item.amount}</p>
                   <button
-                    onClick={() => handleRemoveFromOrders(item)}
+                    onClick={(event) => handleRemoveFromOrders(event, item)}
                     className="mt-10 text-red-600"
                   >
                     Cancel Order
@@ -128,19 +131,16 @@ const CartPage = () => {
         <h1 className=" text-xl text-gray-500 font-bold">Price Details</h1>
         <h2>Total Price</h2>
         <p className="font-bold">₹{totalPrice}</p>
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            handleOrder();
+
+        <button
+          onClick={(event) => {
+            handleOrder(event);
           }}
+          type="button"
+          className=" bg-blue-500 rounded-2xl py-1 px-9 text-white"
         >
-          <button
-            type="submit"
-            className=" bg-blue-500 rounded-2xl py-1 px-9 text-white"
-          >
-            Order
-          </button>
-        </form>
+          Order
+        </button>
       </div>
     </div>
   );
