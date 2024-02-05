@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartPage = () => {
   const favourites = useSelector(state => state.favourites);
@@ -42,6 +44,7 @@ const CartPage = () => {
         })
         .then(response => response.json())
         .then(data => {
+          toast("Wow so easy!");
           console.log('Success:', data);
           dispatch({ type: 'ADD_TO_ORDERS', payload: product });
         })
@@ -64,21 +67,21 @@ const CartPage = () => {
           <div key={item.id} className="p-6">
             <div className="flex">
               <img src={item.image} className="h-28 w-28" alt={item.title} />
-            <div className="flex-col justify-evenly mx-6">
+            <div className="flex-col mx-6 ">
             <h2>{item.title}</h2>
-            <p>₹{item.amount}</p>
-            <button onClick={() => handleRemoveFromFavourites(item)} className="hover:text-red-600 transition">Remove from Favourites</button>
+            <p className='font-semibold'>₹{item.amount}</p>
+            <button onClick={() => handleRemoveFromFavourites(item)} className="mt-10 text-red-600">Remove from Favourites</button>
             </div>
             </div>
           </div>
         ))}
          
       </div>
-      <div className=" p-4 bg-white h-min drop-shadow-lg">
-        <h1 className="text-xl text-gray-500 font-bold">Price Details</h1>
+      <div className="flex-col space-y-2 p-4 bg-white h-min drop-shadow-lg">
+        <h1 className=" text-xl text-gray-500 font-bold">Price Details</h1>
         <h2>Total Price</h2>
-        <p>₹{totalPrice}</p>
-        <button onClick={handleOrder}>Order</button>
+        <p className='font-bold'>₹{totalPrice}</p>
+        <button className=" bg-blue-500 rounded-2xl py-1 px-9 text-white" onClick={handleOrder}>Order</button>
       </div>
     </div>
   );
