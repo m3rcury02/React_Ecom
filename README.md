@@ -61,7 +61,7 @@ Since the server-side api using fetch request is causing a redirect, it results 
 
 ### Cart page
 
-<img src="https://github.com/m3rcury02/tanx_project/blob/8ab40cf528932102c3b8e05230d522131a25f727/screenshots/cart.png">
+<img src="https://github.com/m3rcury02/tanx_project/blob/ea89a387382718531d1f8e4f90323408d16b9af4/screenshots/cart.png">
 
 ## API 
 
