@@ -47,6 +47,7 @@ const Homepage = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+      
   };
 
 

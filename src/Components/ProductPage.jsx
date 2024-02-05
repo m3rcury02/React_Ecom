@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const ProductPage = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const ProductPage = () => {
   const handleAddToFavourites = (event, product) => {
     event.preventDefault(); 
     fetch("http://localhost:5000/favourites", {
+  
       
       method: "POST",
       headers: {
@@ -21,7 +23,6 @@ const ProductPage = () => {
       .then((data) => {
         console.log("Success:", data);
         setFavourite({ ...favourite, [product.id]: true }); 
-        navigate("/cart");
       })
       .catch((error) => {
         console.error("Error:", error);

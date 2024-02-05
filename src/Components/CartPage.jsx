@@ -2,13 +2,13 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { addToOrders, removeFromFavourites, removeFromOrders } from "../store/reducer";
 
 const CartPage = () => {
   const favourites = useSelector((state) => state.favourites);
   const orders = useSelector((state) => state.orders);
   const dispatch = useDispatch();
 
-  
   const totalPrice = favourites.reduce(
     (total, item) => total + Number(item.amount),
     0
@@ -17,49 +17,29 @@ const CartPage = () => {
   const handleRemoveFromFavourites = (e, product) => {
     e.preventDefault();
     fetch(`http://localhost:5000/favourites/${product.id}`, {
-      
       method: "DELETE",
     })
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        dispatch({ type: "REMOVE_FROM_FAVOURITES", payload: product });
+        dispatch(removeFromFavourites(product));
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
-  const handleRemoveFromOrders = (e, product) => {
-    e.preventDefault();
-    fetch(`http://localhost:5000/orders/${product.id}`, {
-      
-      method: "DELETE",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        dispatch({ type: "REMOVE_FROM_ORDERS", payload: product });
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+
   const handleOrder = (e) => {
     e.preventDefault();
     favourites.forEach((product) => {
-      
       fetch(`http://localhost:5000/favourites/${product.id}`, {
-        
         method: "DELETE",
       })
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);
-          dispatch({ type: "REMOVE_FROM_FAVOURITES", payload: product });
-
-          
+          dispatch(removeFromFavourites(product));
           fetch("http://localhost:5000/orders", {
-            
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -68,9 +48,8 @@ const CartPage = () => {
           })
             .then((response) => response.json())
             .then((data) => {
-              toast("Wow so easy!");
               console.log("Success:", data);
-              dispatch({ type: "ADD_TO_ORDERS", payload: product });
+              dispatch(addToOrders(product));
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -81,7 +60,21 @@ const CartPage = () => {
         });
     });
   };
-
+  const handleRemoveFromOrders = (e, product) => {
+    e.preventDefault();
+    fetch(`http://localhost:5000/orders/${product.id}`, {
+      
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        dispatch(removeFromOrders(product));
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
   return (
     <div className="flex justify-evenly mt-8">
       <div className="flex-col">
