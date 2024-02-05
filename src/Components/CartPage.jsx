@@ -129,7 +129,7 @@ const CartPage = () => {
 
       <div className="flex-col space-y-2 p-4 bg-white h-min drop-shadow-lg">
         <h1 className=" text-xl text-gray-500 font-bold">Price Details</h1>
-        <h2>Total Price</h2>
+        <h2>Total cart price</h2>
         <p className="font-bold">₹{totalPrice}</p>
 
         <button
