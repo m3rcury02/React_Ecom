@@ -25,6 +25,11 @@ const reducer = (state = initialState, action) => {
             ...state,
             favourites: state.favourites.filter(product => product.id !== action.payload.id),
           }
+        case "REMOVE_FROM_ORDERS":
+          return {
+            ...state,
+            orders: state.orders.filter(product => product.id !== action.payload.id),
+          }
         case "ADD_TO_ORDERS":
            return {
              ...state,
