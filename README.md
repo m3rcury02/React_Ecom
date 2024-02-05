@@ -18,15 +18,21 @@ The user of this react application will be able to view all the products.
 3. Users can add the products to the cart page
 4. Also user can add their favourite products
 
-## In case of any db.json issue please enter the following line in the terminal of my project
+## Issues
+
+### In case of any db.json issue please enter the following line in the terminal of my project
 
  cd node_modules/ && ln -s /path/to/db.json db.json
 
  Since create-react-app can't access files outside src, this will create a copy of db.json in node_modules folder and point it to the db.json in the root folde r
 
-## Improvements
+### Toast notification
+Since the server-side api using fetch request is causing a redirect, it results in a page refresh. Hence could not display the toast
+
+## Possible Improvements
 - There are some bugs related to persistence
-- Visuals could be more accurate if got the appropriate materials
+- Visuals in cart page, and product page can be improved
+
 ### If I had more time,
 - Dark mode implementation
 - Stricter Routing protocol implementation for login screens
@@ -68,3 +74,6 @@ Please interact with the app and check db.json to verify
 | /products | Lists all available products |
 | /orders | Lists all available orders  
 | /favourites | Lists all available favourites
+
+Hope you like my submission,
+Thank you
