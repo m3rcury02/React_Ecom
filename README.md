@@ -18,14 +18,6 @@ The user of this react application will be able to view all the products.
 3. Users can add the products to the cart page
 4. Also user can add their favourite products
 
-## Issues
-
-### In case of any db.json issue please enter the following line in the terminal of my project
-
- cd node_modules/ && ln -s /path/to/db.json db.json
-
- Since create-react-app can't access files outside src, this will create a copy of db.json in node_modules folder and point it to the db.json in the root folde r
-
 ### Toast notification
 Since the server-side api using fetch request is causing a redirect, it results in a page refresh. Hence could not display the toast
 
@@ -44,6 +36,14 @@ Since the server-side api using fetch request is causing a redirect, it results 
 - `npm install` - To install the dependencies
 - `npm run server` - To start the JSON server
 - `npm start` - To start the react app
+
+## Issues
+
+### In case of any db.json issue please enter the following line in the terminal of my project
+
+ cd node_modules/ && ln -s /path/to/db.json db.json
+
+ Since create-react-app can't access files outside src, this will create a copy of db.json in node_modules folder and point it to the db.json in the root folder
 
 ## Screenshots
 
