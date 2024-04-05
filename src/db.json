@@ -4,6 +4,11 @@
       "id": "db9e",
       "email": "gunal2002@gmail.com",
       "pwd": "123"
+    },
+    {
+      "id": "e432",
+      "email": "gunal2002@gmail.com",
+      "pwd": "123123"
     }
   ],
   "products": [
@@ -104,71 +109,14 @@
       "rating": "4.0"
     }
   ],
-  "orders": [
-    {
-      "id": "1",
-      "title": "EYEBOGLER Regular Fit Men's Cotton T-Shirt",
-      "description": "What does it feel like to witness climate change playing out in real-time? #notcool. Sound the alarm with our Women's Climate Change T-shirt, printed on organic cotton in our Carbon Neutral factory. Plus, when it's worn out you can send it back to us to be remade into something new. That's what real sustainability means to us.",
-      "image": "https://i.pinimg.com/originals/25/0d/a3/250da32c889b624849bf828ae2ece420.jpg",
-      "amount": "200",
-      "rating": "4.0"
-    },
-    {
-      "id": "2",
-      "title": "RodZen - Men's Cotton Half Sleeve Regular Fit Striped T-Shirt",
-      "description": "What does it feel like to witness climate change playing out in real-time? #notcool. Sound the alarm with our Women's Climate Change T-shirt, printed on organic cotton in our Carbon Neutral factory. Plus, when it's worn out you can send it back to us to be remade into something new. That's what real sustainability means to us.",
-      "image": "https://i.pinimg.com/564x/b9/83/a7/b983a7e4e9a4a05ee8ae8333f1c7b2d8.jpg",
-      "amount": "300",
-      "rating": "4.0"
-    },
-    {
-      "id": "1",
-      "title": "EYEBOGLER Regular Fit Men's Cotton T-Shirt",
-      "description": "What does it feel like to witness climate change playing out in real-time? #notcool. Sound the alarm with our Women's Climate Change T-shirt, printed on organic cotton in our Carbon Neutral factory. Plus, when it's worn out you can send it back to us to be remade into something new. That's what real sustainability means to us.",
-      "image": "https://i.pinimg.com/originals/25/0d/a3/250da32c889b624849bf828ae2ece420.jpg",
-      "amount": "200",
-      "rating": "4.0"
-    },
-    {
-      "id": "1",
-      "title": "EYEBOGLER Regular Fit Men's Cotton T-Shirt",
-      "description": "What does it feel like to witness climate change playing out in real-time? #notcool. Sound the alarm with our Women's Climate Change T-shirt, printed on organic cotton in our Carbon Neutral factory. Plus, when it's worn out you can send it back to us to be remade into something new. That's what real sustainability means to us.",
-      "image": "https://i.pinimg.com/originals/25/0d/a3/250da32c889b624849bf828ae2ece420.jpg",
-      "amount": "200",
-      "rating": "4.0"
-    },
-    {
-      "id": "1",
-      "title": "EYEBOGLER Regular Fit Men's Cotton T-Shirt",
-      "description": "What does it feel like to witness climate change playing out in real-time? #notcool. Sound the alarm with our Women's Climate Change T-shirt, printed on organic cotton in our Carbon Neutral factory. Plus, when it's worn out you can send it back to us to be remade into something new. That's what real sustainability means to us.",
-      "image": "https://i.pinimg.com/originals/25/0d/a3/250da32c889b624849bf828ae2ece420.jpg",
-      "amount": "200",
-      "rating": "4.0"
-    },
-    {
-      "id": "1",
-      "title": "EYEBOGLER Regular Fit Men's Cotton T-Shirt",
-      "description": "What does it feel like to witness climate change playing out in real-time? #notcool. Sound the alarm with our Women's Climate Change T-shirt, printed on organic cotton in our Carbon Neutral factory. Plus, when it's worn out you can send it back to us to be remade into something new. That's what real sustainability means to us.",
-      "image": "https://i.pinimg.com/originals/25/0d/a3/250da32c889b624849bf828ae2ece420.jpg",
-      "amount": "200",
-      "rating": "4.0"
-    },
-    {
-      "id": "1",
-      "title": "EYEBOGLER Regular Fit Men's Cotton T-Shirt",
-      "description": "What does it feel like to witness climate change playing out in real-time? #notcool. Sound the alarm with our Women's Climate Change T-shirt, printed on organic cotton in our Carbon Neutral factory. Plus, when it's worn out you can send it back to us to be remade into something new. That's what real sustainability means to us.",
-      "image": "https://i.pinimg.com/originals/25/0d/a3/250da32c889b624849bf828ae2ece420.jpg",
-      "amount": "200",
-      "rating": "4.0"
-    }
-  ],
+  "orders": [],
   "favourites": [
     {
-      "id": "1",
-      "title": "EYEBOGLER Regular Fit Men's Cotton T-Shirt",
+      "id": "7",
+      "title": "AMERICAN CREW - Men's Regular Fit Polos",
       "description": "What does it feel like to witness climate change playing out in real-time? #notcool. Sound the alarm with our Women's Climate Change T-shirt, printed on organic cotton in our Carbon Neutral factory. Plus, when it's worn out you can send it back to us to be remade into something new. That's what real sustainability means to us.",
       "image": "https://i.pinimg.com/originals/25/0d/a3/250da32c889b624849bf828ae2ece420.jpg",
-      "amount": "200",
+      "amount": "300",
       "rating": "4.0"
     }
   ]

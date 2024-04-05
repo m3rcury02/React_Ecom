@@ -1,5 +1,6 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
-import initialState from 'db.json';
+import initialState from '../db.json';
+
 
 const slice = createSlice({
   name: 'user',
