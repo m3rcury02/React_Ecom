@@ -1,7 +1,4 @@
-# Ecommerce (React) Coding Assessment
-
-## About the project
-This is my submission for the tanX.fi frontend engineer role.
+# Ecommerce (React) Application
 
 ## Tech Stack
 For this project, I tried my best to stick with a vanilla implementation.
@@ -17,18 +14,6 @@ The user of this react application will be able to view all the products.
 2. Users can be authenticated
 3. Users can add the products to the cart page
 4. Also user can add their favourite products
-
-### Toast notification
-Since the server-side api using fetch request is causing a redirect, it results in a page refresh. Hence could not display the toast
-
-## Possible Improvements
-- There are some bugs related to persistence
-- Visuals in cart page, and product page can be improved
-
-### If I had more time,
-- Dark mode implementation
-- Stricter Routing protocol implementation for login screens
-- Visual and functional bug fixes
 
 ## Running the application
 
